@@ -7,7 +7,7 @@ export AIRFLOW__CORE__PLUGINS_FOLDER=${GITHUB_WORKSPACE}/plugins/
 export AIRFLOW__CORE__LOGS_FOLDER="/tmp/logs/"
 export FERNET_KEY=$(openssl rand -base64 32)
 export REQUIREMENTS_FILE=${GITHUB_WORKSPACE}/requirements.txt
-pip install --user -r ${REQUIREMENTS_FILE}
+sudo pip install -r ${REQUIREMENTS_FILE}
 RUN_ID=$(uuidgen)
 RESULTS_DIR=${GITHUB_WORKSPACE}/airflow-diff-results
 git config --global --add safe.directory $GITHUB_WORKSPACE
